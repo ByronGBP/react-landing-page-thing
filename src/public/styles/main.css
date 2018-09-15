@@ -1,8 +1,7 @@
-/* ---- reset ---- */
-
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -10,5 +9,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #F2E1E1
+  background: #F2E1E1;
 }
+
+/*# sourceMappingURL=main.css.map */

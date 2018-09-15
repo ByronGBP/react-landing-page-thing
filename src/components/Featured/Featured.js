@@ -2,17 +2,16 @@
 import React, { Component } from 'react';
 
 type Props = {
-  title: string,
 };
 
-class App extends Component<Props> {
-  render () {
+class Featured extends Component<Props> {
+  render() {
     return (
       <div>
-        {this.props.title}
+        Featured!
       </div>
     );
   }
 }
 
-export default App;
+export default Featured;
