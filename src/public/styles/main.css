@@ -1,3 +1,5 @@
+@import '/src/public/assets/fonts/avenir/stylesheet.css';
+@import '/src/public/assets/fonts/amerigo/stylesheet.css';
 html {
   box-sizing: border-box;
 }
@@ -10,6 +12,15 @@ body {
   margin: 0;
   padding: 0;
   background: #F2E1E1;
+}
+
+body {
+  color: #000;
+  font-family: AvenirLTStd-Book;
+}
+
+button {
+  font-family: AvenirLTStd-Book;
 }
 
 /*# sourceMappingURL=main.css.map */
