@@ -1,11 +1,72 @@
 @import '/src/public/assets/fonts/avenir/stylesheet.css';
 @import '/src/public/assets/fonts/amerigo/stylesheet.css';
 
+html {
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  color:#000;
+  color:$second-color;
   font-family: AvenirLTStd-Book;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Amerigo BT", "Lato", sans-serif;
+  font-size: 35px;
+  line-height: 1.3;
+  letter-spacing: 0.011em;
+  font-weight: normal;
+  font-style: normal;
 }
 
 button {
   font-family: AvenirLTStd-Book;
+}
+
+.header__sidebar {
+  font-family: AvenirLTStd-Book;
+  font-size: 35px;
+  line-height: 1.05;
+  letter-spacing: 0em;
+  font-weight: normal;
+  font-style: normal;
+  color: $second-color;
+}
+
+.sidebar{
+  &__legal-link {
+    font-family: 'AvenirLTStd-Book';
+    font-size: 12px;
+    line-height: 1.3;
+    position: absolute;
+    left: 20px;
+    top: 95.5vh;
+    text-decoration: underline;
+    @include transition(0.3s);
+    &:active {
+      color: $main-color;
+    }
+  }
+
+  &__item:active {
+    background-color: $second-color;
+    color: $main-color;
+  }
+}
+
+.subtitle {
+  font-family: "AvenirLTStd-Heavy";
+  font-size: 10px;
+  line-height: 1.3;
+  letter-spacing: 0.2em;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-family: "AvenirLTStd-Book";
+  font-size: 35px;
+  line-height: 1.05;
+  letter-spacing: 0em;
 }

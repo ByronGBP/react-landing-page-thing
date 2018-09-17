@@ -1,17 +1,14 @@
 // @flow
 import React, { Component } from 'react';
 
-type Props = {
-};
+import Contact from './Contact';
 
-class Footer extends Component<Props> {
-  render() {
-    return (
-      <div>
-        Footer!
-      </div>
-    );
-  }
-}
+const Footer = () => (
+  <footer id="footer">
+    <div className="footer__contact">
+      <Contact />
+    </div>
+  </footer>
+);
 
 export default Footer;

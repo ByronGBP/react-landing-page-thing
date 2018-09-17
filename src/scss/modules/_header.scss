@@ -1,0 +1,40 @@
+.header {
+  &__container {
+    @include flex;
+    @include justify-content-between;
+    height: 100%;
+  }
+
+  &__logo {
+    @include flex;
+    @include align-items-center;
+    justify-content: flex-end;
+  }
+
+  &__burger {
+    @include flex;
+    @include align-items-center;
+  }
+
+  &__sidebar {
+    opacity: 0;
+    position:fixed;
+    visibility: hidden;
+    background-color: transparent;
+    width: 100%;
+    @include transition(0.4s ease);
+  }
+
+  &--top {
+    @include transform(translateY(0px));    
+  }
+
+  &--no-top {
+    @include transform(translateY(-60px));
+  }
+
+  &--pinned {
+    @include transform(translateY(0px));    
+    background-color: $main-color;
+  }
+}

@@ -1,12 +1,9 @@
 // @flow
 import React, { Component, Fragment } from 'react';
 
-import Featured from '../components/Featured/Featured';
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
-import Landing from '../components/Landing/Landing';
-import MoreProjects from '../components/MoreProjects/MoreProjects';
-import WorkWith from '../components/WorkWith/WorkWith';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Main from '../components/Main';
 
 type Props = {
 };
@@ -15,12 +12,9 @@ class Home extends Component<Props> {
   render() {
     return (
       <Fragment>
-        <Header />
-        <Footer />
-        <Landing />
-        <WorkWith />
-        <Featured />
-        <MoreProjects />
+        <Header/>
+        <Footer/>
+        <Main/>
       </Fragment>
     );
   }

@@ -1,0 +1,47 @@
+.loader {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 150;
+  @include transition(2s);
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    @include transform(translateY(-50%) translateX(-50%));
+  }
+
+  &__item {
+    background-color: $second-color;
+    border-radius: 100%;
+    margin: 2px;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    @include animation(loader-animation 1s 0s ease-in-out infinite);
+  }
+
+  &--hidden {
+    background-color: transparent!important;
+    visibility: hidden;
+    z-index: -1000;
+
+    .loader__item {
+      @include animation(none);
+      visibility: hidden;
+    }
+  }
+}
+
+@include keyframes(loader-animation) {
+    0%{
+      @include transform(scale(0));
+    }
+    100%{
+      @include transform(scale(1));
+      opacity:0
+    }
+}
+

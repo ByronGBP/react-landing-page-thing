@@ -1,0 +1,13 @@
+.logo {
+  &__container {
+    padding-right: 30px;
+    z-index: 1000;
+    @include flex;
+
+    &:active #Fill-8 {
+      fill:$main-color;
+      @include transition(0.2s);
+    }
+  }
+}
+

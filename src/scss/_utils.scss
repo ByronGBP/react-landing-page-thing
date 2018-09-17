@@ -1,0 +1,77 @@
+@mixin flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+@mixin align-items-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+@mixin justify-content-end {
+  justify-content: flex-end;
+}
+
+@mixin justify-content-between {
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin user-select($value) {
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin linear-gradient($values...) {
+  background: -webkit-linear-gradient(top, $values);
+  background: linear-gradient(to bottom, $values);
+}
+
+@mixin animation($animations...) {
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($name) {
+  @-moz-keyframes #{$name} {
+      @content;
+  }
+  @-webkit-keyframes #{$name} {
+      @content;
+  }
+  @-o-keyframes #{$name} {
+      @content;
+  }
+  @keyframes #{$name} {
+      @content;
+  }
+}
+
+.margin-padding-zero {
+  margin: 0;
+  padding: 0;
+}

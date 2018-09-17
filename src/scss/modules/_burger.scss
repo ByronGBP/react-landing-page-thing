@@ -1,0 +1,35 @@
+.burger {
+
+  &__container {
+    position: relative;
+    padding-left: 15px;
+    width: 26px;
+    height: 16px;
+    z-index: 1000;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background: $second-color;
+    position: absolute;
+    @include transition(0.4s ease);
+
+    &--top {
+      top: 0%;
+    }
+
+    &--middle {
+      top: 50%;
+    }
+
+    &--bottom {
+      top: 100%;
+    }
+
+    &--collapse {
+      top:50%!important;
+    }
+  }
+
+}
