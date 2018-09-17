@@ -1,7 +1,9 @@
 .nav {
+  @include flex;
+  @include align-items-center;
+
   &__container {
-    @include flex;
-    
+    @include flex;   
   }
 
   &__item {

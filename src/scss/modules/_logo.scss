@@ -8,6 +8,10 @@
       fill:$main-color;
       @include transition(0.2s);
     }
+
+    @include breakpoints(992px) {
+      padding-right: 90px;
+    }
   }
 }
 

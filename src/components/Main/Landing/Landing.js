@@ -67,15 +67,17 @@ class Landing extends Component<Props> {
       <Fragment>
         <div className={`overlay ${this.handleHack() ? "overlay--hidden": ""}`} ></div>
         <section className="landing lazy-bg" ref={elem => this.landingElement=elem}>
-          <div className="landing__container">
-            <div className={`landing__message ${this.handleHack() ? "landing__message--active" : ""}`}>
-              <h1 className="subtitle"><p>DIGITAL YOU</p></h1>
-              <h3 className="title col-8"><p>Digital experiences with results</p></h3>
-            </div>
-            <div className="landing__gradient">
-              <div className="mouse-scroll__container">
-                <div className="mouse-scroll__item"></div>
+          <div className="landing__wrapper">          
+            <div className="landing__container">
+              <div className={`landing__message ${this.handleHack() ? "landing__message--active" : ""}`}>
+                <h1 className="subtitle"><p>DIGITAL YOU</p></h1>
+                <h3 className="title col-8"><p>Digital experiences with results</p></h3>
               </div>
+            </div>
+          </div>
+          <div className="landing__gradient">
+            <div className="mouse-scroll__container">
+              <div className="mouse-scroll__item"></div>
             </div>
           </div>
         </section>

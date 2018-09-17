@@ -77,6 +77,27 @@
   }
 }
 
+@mixin col-list {
+  @for $i from 1 through 12 {
+    .col-#{$i} { 
+      width:  $i / 12 * 100%;
+    }
+  }
+}
+
+@mixin col-extend {
+    @for $i from 1 through 12 {
+    .col-#{$i} { @extend %common };
+  }
+}
+
+%common {
+  position: relative;
+  min-height: 1px;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
 .margin-padding-zero {
   margin: 0;
   padding: 0;

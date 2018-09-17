@@ -35,6 +35,10 @@
       top:auto;
       width:100%;
     }
+
+    @include breakpoints(992px) {
+      padding-left: 70px;
+    }
   }
 
   &__sidebar {
