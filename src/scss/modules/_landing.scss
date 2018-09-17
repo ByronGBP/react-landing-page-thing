@@ -21,6 +21,7 @@
     @include justify-content-end;
     width: 100%;
     padding-left: 20px;
+    padding-right: 30px;
     height: 45%;
     @include transition(0.4s 1s ease-out);
     @include transform(translateY(10%));

@@ -362,6 +362,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   padding-left: 20px;
+  padding-right: 30px;
   height: 45%;
   -webkit-transition: 0.4s 1s ease-out;
   -moz-transition: 0.4s 1s ease-out;
