@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Burger from './Burger';
 import Logo from './Logo';
 import Sidebar from './Sidebar';
+import Nav from './Nav';
 
 type Props = {}
 
@@ -63,6 +64,7 @@ class Header extends Component<Props> {
       <header ref={(elem) => this.headerElement = elem} id="header" className="">
         <div className="header__container">
           <div className="header__burger"><Burger onClick={this.handleBurgerClick}/></div>
+          <div className="header__nav"><Nav/></div>
           <div className="header__logo"><Logo/></div>
           <div className="header__sidebar" ref={elem => this.sidebarElement = elem}><Sidebar/></div>
         </div>

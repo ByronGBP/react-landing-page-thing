@@ -31,9 +31,9 @@ class Landing extends Component<Props> {
     const element = this.landingElement;
     const pageYOffset = window.pageYOffset;
     if (pageYOffset > this.currentYOffset && this.currentYPosition > -10) {
-      this.currentYPosition -= 0.1;
+      this.currentYPosition -= 0.15;
     } else if (pageYOffset < this.currentYOffset && this.currentYPosition < 0) {
-      this.currentYPosition += 0.1;
+      this.currentYPosition += 0.15;
     }
     element.style.backgroundPositionY = this.currentYPosition + 'px';
 
@@ -70,7 +70,7 @@ class Landing extends Component<Props> {
           <div className="landing__container">
             <div className={`landing__message ${this.handleHack() ? "landing__message--active" : ""}`}>
               <h1 className="subtitle"><p>DIGITAL YOU</p></h1>
-              <h3 className="title"><p>Digital experiences with results</p></h3>
+              <h3 className="title col-8"><p>Digital experiences with results</p></h3>
             </div>
             <div className="landing__gradient">
               <div className="mouse-scroll__container">

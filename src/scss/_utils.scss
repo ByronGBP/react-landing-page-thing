@@ -71,7 +71,14 @@
   }
 }
 
+@mixin breakpoints($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
 .margin-padding-zero {
   margin: 0;
   padding: 0;
 }
+
