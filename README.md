@@ -2,7 +2,7 @@
 - An another one! With react, sass, webpack and flow.
 
 # Try it!
-- [!!!](https://byrongbp.github.io/react-landing-page-thing/)
+- [!!!](https://react-landing-thing.herokuapp.com/)
 
 # TODO
 - [!!!](./TODO.md)
