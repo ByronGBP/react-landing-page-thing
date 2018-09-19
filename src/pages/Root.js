@@ -20,9 +20,9 @@ class Root extends Component<Props, State> {
   }
 
   render() {
-    // Idea:- Any component will say when is ready so the `Loader` can disappear
+    // Idea:- Any component will say when it is ready so the `Loader` can disappear
     // A state management like redux would be usefull here
-    // Here it will be simulated with an event-based communication 
+    // It will be simulated with an event-based communication 
     const { isLoaded } = this.state;
     return (
       <Fragment>

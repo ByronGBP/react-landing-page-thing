@@ -29,11 +29,12 @@
   }
 
   &--is-not-top {
-    @include transform(translateY(-60px));
+    @include transform(translateY(-120px));
   }
 
   &--is-pinned {
     @include transform(translateY(0px));    
-    background-color: $black-color;
+    max-height: 70px!important;
+    background-color: $black-color!important;
   }
 }

@@ -12,13 +12,13 @@ class NavList extends Component<Props> {
   }
 
   handleClick = (evt: SyntheticEvent<HTMLElement>) => {
-    //Idea:- When user clicks a navItem it will highlight or deshighlight
+    //Idea:- When the user clicks a navItem it will highlight or unhighlight
     const currentElement = evt.currentTarget;
     currentElement.classList.toggle('active');
     if (!this.navItemsElements) {
       return;
     }
-    let patch = 0; // To track if all are active or no one <- Refactor!
+    let patch = 0; // To track if all or none are active <- Refactor!
     this.navItemsElements.forEach((elem: HTMLElement) => {
       if (elem !== currentElement && elem.classList.contains('active')){
         elem.classList.remove('active');
@@ -28,7 +28,7 @@ class NavList extends Component<Props> {
     //TODO:- Refactor
     if (patch === 3) { // <-- all active
       currentElement.classList.toggle('active');
-    } else if (patch === 0) { // <-- no one active
+    } else if (patch === 0) { // <-- none active
       //$FlowFixMe
       this.navItemsElements.forEach((elem: HTMLElement) => {
         elem.classList.add('active');

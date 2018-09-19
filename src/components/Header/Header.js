@@ -22,8 +22,8 @@ class Header extends Component<Props, State> {
 
   handleScroll = () => {
     // Idea:- 
-    // If the header is top -> with no background
-    // If the header is no-top:
+    // If the header is top -> no background
+    // If the header is not-top:
     //  If it is dropping -> no header
     //  If it is lifting -> header with background
     if (!this.headerElement) {
@@ -54,9 +54,12 @@ class Header extends Component<Props, State> {
   handleBurgerClick = () => {
     //TODO:- find new method for this
     //$FlowFixMe
-    document.body.classList.toggle('is-overflow-locked');
+    document.body.classList.toggle('is-overflow-hidden');
     //$FlowFixMe
     document.querySelector('#footer').classList.toggle('is-hidden');
+    //TODO:- for this, Sidebar should be a child of `main-container`
+    //$FlowFixMe
+    document.querySelector('.link--legal').classList.toggle('is-overflow-hidden');
 
     const { isBurgerClicked } = this.state;
     this.setState({ isBurgerClicked: !isBurgerClicked } );

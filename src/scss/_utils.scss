@@ -51,9 +51,9 @@
 
 @mixin animation($animations...) {
   -webkit-animation: $animations;
-  -moz-animation:    $animations;
-  -o-animation:      $animations;
-  animation:         $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
 }
 
 @mixin keyframes($name) {
@@ -77,17 +77,17 @@
   }
 }
 
-@mixin col-list {
+@mixin col-list($prefix) {
   @for $i from 1 through 12 {
-    .col-#{$i} { 
+    .col-#{$prefix}-#{$i} { 
       width:  $i / 12 * 100%;
     }
   }
 }
 
-@mixin col-extend {
+@mixin col-extend($prefix) {
     @for $i from 1 through 12 {
-    .col-#{$i} { @extend %common };
+    .col-#{$prefix}-#{$i} { @extend %common };
   }
 }
 

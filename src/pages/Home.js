@@ -22,11 +22,16 @@ class Home extends Component<Props> {
   render() {
     const { isLoaded } = this.props;
     return (
-      <div className="main-container">
-        <Header />
-        <Main isLoaded={ isLoaded }/>
-        <Footer />
-      </div>
+      <Fragment>
+        <div className="main-container">
+          <Header />
+          <div>
+            <Main isLoaded={ isLoaded }/>
+          </div>
+          <Footer />
+        </div>
+        <a className="link--legal"> Legal Notice</a>
+      </Fragment>
     );
   }
 }

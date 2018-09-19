@@ -5,7 +5,9 @@
 @import "modules/header/_header.scss";
 @import "modules/footer/_footer.scss";
 @import "modules/footer/_contact.scss";
-@import "modules/_landing.scss";
-@import "modules/_mouse-scroll.scss";
+@import "modules/main/landing/_background.scss";
+@import "modules/main/landing/_content.scss";
+@import "modules/main/landing/_landing.scss";
+@import "modules/main/landing/_mouse-scroll-animation.scss";
 @import "modules/_loader.scss";
 @import "modules/_overlay.scss";

@@ -1,6 +1,9 @@
-.mouse-scroll {
+.mouse-scroll-animation {
+  height: 200px;
+  position: relative;
+
   &__container {
-    left: 20px;
+    left: 0px;
     bottom: 45px;
     height: 100px;
     width: 1px;

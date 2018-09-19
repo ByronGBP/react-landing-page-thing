@@ -10,7 +10,6 @@ body {
   @extend %margin-padding-zero;
   -webkit-tap-highlight-color: transparent;
   background: $black-color;
-  overflow: scroll;
 }
 
 ul, ol, li {

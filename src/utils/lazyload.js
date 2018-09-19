@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  var lazyImages = [].slice.call(document.querySelectorAll(".lazy-bg"));
+export const lazyLoad = (query) => {
+  const matchQuery = query || '.lazy-bg';
+  var lazyImages = [].slice.call(document.querySelectorAll(matchQuery));
   //TODO:- add pollyfill for unsupported browsers -> https://github.com/w3c/IntersectionObserver/tree/master/polyfill
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver((entries, observer) => {
@@ -16,4 +17,4 @@ document.addEventListener("DOMContentLoaded", () => {
       lazyImageObserver.observe(lazyImage);
     });
   }
-});
+};

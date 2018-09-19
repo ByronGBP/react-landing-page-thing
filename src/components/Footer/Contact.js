@@ -17,7 +17,7 @@ class Contact extends Component<Props, State> {
 
   render () {
     const { isClicked } = this.state;
-    //TODO:- isolate both svg
+    //TODO:- isolate both svgs
     return(
       <div className="contact">
         <div className="contact__wrapper">

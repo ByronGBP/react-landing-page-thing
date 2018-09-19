@@ -1,74 +1,27 @@
 // @flow
 import React, { Component, Fragment } from 'react';
 
+import Background from './Background';
+import Content from './Content';
+
 type Props = {};
 
 class Landing extends Component<Props> {
 
-  landingElement: ?HTMLElement;
-  currentYOffset: number = 0;
-  currentYPosition: number = 0;
-
-  intervalId: IntervalID;
-  currentImageIndex: number = 1;
-
-  handleScroll = () => {
-    if (!this.landingElement) {
-      return;
-    }
-    //TODO:- isolate the parallax logic
-    const element = this.landingElement;
-    const pageYOffset = window.pageYOffset;
-    if (pageYOffset > this.currentYOffset && this.currentYPosition > -10) {
-      this.currentYPosition -= 0.15;
-    } else if (pageYOffset < this.currentYOffset && this.currentYPosition < 0) {
-      this.currentYPosition += 0.15;
-    }
-    element.style.backgroundPositionY = this.currentYPosition + 'px';
-
-    this.currentYOffset = pageYOffset;
-  }
-
-  swapBackground = () => {
-    //Little sht pretending to be a carousel
-    if (!this.landingElement) {
-      return;
-    }
-    this.landingElement.classList.toggle('ready-2');
-  }
-
   componentDidMount() {
-    this.setupEventHandlers();
-  }
-
-  setupEventHandlers() {
-    document.addEventListener('scroll', this.handleScroll);
-    //TODO:- stop doing sht!
-    //Hot patch for no having an aggresive background animation at the beggining
-    setTimeout(() => {
-      this.intervalId = setInterval(this.swapBackground, 5000);
-    }, 2000);
+    console.log('landing mounted');
   }
 
   render() {
     return (
-      <Fragment>
-        <section className="landing lazy-bg" ref={elem => this.landingElement=elem}>
-          <div className="landing__wrapper">          
-            <div className="landing__container">
-              <div className={`landing__message landing__message--active`}>
-                <h1 className="subtitle"><p>DIGITAL YOU</p></h1>
-                <h3 className="title col-8"><p>Digital experiences with results</p></h3>
-              </div>
-            </div>
-          </div>
-          <div className="landing__gradient">
-            <div className="mouse-scroll__container">
-              <div className="mouse-scroll__item"></div>
-            </div>
-          </div>
-        </section>
-      </Fragment>
+      <section className="landing ratio-1-1">
+        <div className="landing__background">
+          <Background/>
+        </div>
+        <div className="landing__content">          
+          <Content/>
+        </div>
+      </section>
     );
   }
 }
