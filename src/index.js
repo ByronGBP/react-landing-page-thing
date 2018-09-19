@@ -1,12 +1,13 @@
 // @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/Home';
 
-const container: HTMLElement | null = document.getElementById('main-container');
+import Root from './pages/Root';
+
+const container: HTMLElement | null = document.getElementById('root-container');
 
 if (!container) {
   throw new Error(`Container doesn't exist`);
 }
 
-ReactDOM.render(<Home />, container);
+ReactDOM.render(<Root />, container);

@@ -12,7 +12,7 @@
     position: absolute;
     height: 0%;
     top: 0px; 
-    background-color: $second-color;
+    background-color: $white-color;
     @include animation(mouse-scroll 2.5s 4.5s infinite ease-in-out)
   }
 }

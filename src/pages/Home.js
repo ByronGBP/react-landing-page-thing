@@ -6,16 +6,27 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 
 type Props = {
+  onReady: () => void;
+  isLoaded: boolean;
 };
 
 class Home extends Component<Props> {
+
+  componentDidMount() {
+    // simulate an asynchronous call
+    setTimeout(() => {
+      this.props.onReady();
+    }, 2000);
+  }
+
   render() {
+    const { isLoaded } = this.props;
     return (
-      <Fragment>
-        <Header/>
-        <Footer/>
-        <Main/>
-      </Fragment>
+      <div className="main-container">
+        <Header />
+        <Main isLoaded={ isLoaded }/>
+        <Footer />
+      </div>
     );
   }
 }

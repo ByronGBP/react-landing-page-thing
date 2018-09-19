@@ -1,0 +1,52 @@
+.burger {
+
+  width: 40px;
+  height: 60px;
+  position: relative;
+  @include flex;
+  @include align-items-center;
+  @include transition(0.4s ease);
+  
+  @include breakpoints(768px) {
+    opacity: 0;
+    z-index: -100;
+    position: absolute;
+  }
+
+  &__container {
+    position: absolute;
+    margin-left: 15px;
+    width: 65%;
+    top: 50%;
+    @include transform(translateY(-50%));
+  }
+
+  &__wrapper {
+    padding-bottom: 60%;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background: $white-color;
+    position: absolute;
+    @include transition(0.4s ease);
+
+    &--is-top {
+      top: 0%;
+    }
+
+    &--is-middle {
+      top: 50%;
+    }
+
+    &--is-bottom {
+      top: 100%;
+    }
+
+    &--is-collapse {
+      top:50%!important;
+    }
+  }
+
+}

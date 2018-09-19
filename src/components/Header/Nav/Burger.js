@@ -10,7 +10,7 @@ class Burger extends Component<Props> {
   burgerLinesElements: ?NodeList<HTMLElement>;
 
   componentDidMount() {
-    this.setupEventHandle();
+    this.setupElements();
   }
 
   handleClick = () => {
@@ -18,22 +18,26 @@ class Burger extends Component<Props> {
       return;
     }
     this.burgerLinesElements.forEach((elem: HTMLElement) => {
-      elem.classList.toggle('burger__line--collapse');
+      elem.classList.toggle('burger__line--is-collapse');
     });
 
     this.props.onClick();
   }
 
-  setupEventHandle() {
+  setupElements() {
     this.burgerLinesElements = document.querySelectorAll('.burger__line');
   }
 
   render() {
     return (
-      <div className="burger__container" onClick={this.handleClick}>
-        <div className="burger__line burger__line--top"></div>
-        <div className="burger__line burger__line--middle"></div>
-        <div className="burger__line burger__line--bottom"></div>
+      <div className="burger">
+        <div className="burger__container">
+          <div className="burger__wrapper" onClick={this.handleClick}>
+            <div className="burger__line burger__line--is-top"></div>
+            <div className="burger__line burger__line--is-middle"></div>
+            <div className="burger__line burger__line--is-bottom"></div>
+          </div>
+        </div>
       </div>
     );
   }

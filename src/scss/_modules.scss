@@ -1,11 +1,11 @@
-@import "modules/_burger.scss";
-@import "modules/_logo.scss";
-@import "modules/_sidebar.scss";
-@import "modules/_header.scss";
+@import "modules/header/_burger.scss";
+@import "modules/header/_logo.scss";
+@import "modules/header/_sidebar.scss";
+@import "modules/header/_nav-list.scss";
+@import "modules/header/_header.scss";
 @import "modules/_footer.scss";
 @import "modules/_contact.scss";
 @import "modules/_landing.scss";
 @import "modules/_mouse-scroll.scss";
 @import "modules/_loader.scss";
 @import "modules/_overlay.scss";
-@import "modules/_nav.scss";

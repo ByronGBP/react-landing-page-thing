@@ -1,9 +1,7 @@
 // @flow
 import React, { Component, Fragment } from 'react';
 
-type Props = {
-  hack: string;
-};
+type Props = {};
 
 class Landing extends Component<Props> {
 
@@ -13,15 +11,6 @@ class Landing extends Component<Props> {
 
   intervalId: IntervalID;
   currentImageIndex: number = 1;
-
-  //Little hack to handle a communication from a sibling -> Loader
-  handleHack = () => {
-    if (this.props.hack) {
-      return true;
-    } else {
-      console.log('nah');
-    }
-  }
 
   handleScroll = () => {
     if (!this.landingElement) {
@@ -62,14 +51,12 @@ class Landing extends Component<Props> {
   }
 
   render() {
-    this.handleHack();
     return (
       <Fragment>
-        <div className={`overlay ${this.handleHack() ? "overlay--hidden": ""}`} ></div>
         <section className="landing lazy-bg" ref={elem => this.landingElement=elem}>
           <div className="landing__wrapper">          
             <div className="landing__container">
-              <div className={`landing__message ${this.handleHack() ? "landing__message--active" : ""}`}>
+              <div className={`landing__message landing__message--active`}>
                 <h1 className="subtitle"><p>DIGITAL YOU</p></h1>
                 <h3 className="title col-8"><p>Digital experiences with results</p></h3>
               </div>

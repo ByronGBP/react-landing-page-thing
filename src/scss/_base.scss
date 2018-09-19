@@ -7,25 +7,30 @@ html {
 
 body {
   @include user-select(none);
-  @extend .margin-padding-zero;
+  @extend %margin-padding-zero;
   -webkit-tap-highlight-color: transparent;
-  background: $main-color;
+  background: $black-color;
   overflow: scroll;
 }
 
 ul, ol, li {
-  @extend .margin-padding-zero;
+  @extend %margin-padding-zero;
   list-style-type: none;
   list-style: none;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  @extend .margin-padding-zero;
+  @extend %margin-padding-zero;
 }
 
 a {
-  @extend .margin-padding-zero;
+  @extend %margin-padding-zero;
   color: inherit;
   text-decoration: none;
   cursor: pointer
+}
+
+%margin-padding-zero {
+  margin: 0px;
+  padding: 0px;
 }

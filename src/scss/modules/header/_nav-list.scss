@@ -1,0 +1,31 @@
+.nav-list {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  @include flex;
+  @include align-items-center;
+  @include transition(0.4s ease);
+  @include breakpoints(768px) {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    top:auto;
+    width:100%;
+  }
+
+  @include breakpoints(992px) {
+    padding-left: 70px;
+  }
+
+  &__container {
+    @include flex;   
+  }
+
+  &__item {
+    visibility: 0;
+
+    @include breakpoints(768px) {
+      visibility: visible;
+    }
+  }
+}

@@ -2,19 +2,18 @@
   position: absolute;
   height: 100vh;
   width: 100%;
-  z-index: 150;
-  @include transition(2s);
+  z-index: -10;
+  @include transition(1s ease-in);
 
   &__container {
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 10;
     @include transform(translateY(-50%) translateX(-50%));
   }
 
   &__item {
-    background-color: $second-color;
+    background-color: $white-color;
     border-radius: 100%;
     margin: 2px;
     display: inline-block;
@@ -23,14 +22,10 @@
     @include animation(loader-animation 1s 0s ease-in-out infinite);
   }
 
-  &--hidden {
-    background-color: transparent!important;
-    visibility: hidden;
-    z-index: -1000;
-
+  &.is-hidden {
     .loader__item {
+      opacity: 0;
       @include animation(none);
-      visibility: hidden;
     }
   }
 }
@@ -44,4 +39,3 @@
       opacity:0
     }
 }
-
