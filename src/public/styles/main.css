@@ -435,25 +435,18 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   background-color: #263265;
 }
 
-.contact__container {
-  width: 100%;
-  height: 100%;
+.contact__wrapper {
   display: flex;
   display: -webkit-flex;
   justify-content: flex-end;
+}
+.contact__container {
+  position: absolute;
 }
 .contact__link {
   display: block;
   width: 78px;
   height: 90px;
-}
-
-#project-mb:active {
-  fill: #263265;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
 }
 
 .landing {

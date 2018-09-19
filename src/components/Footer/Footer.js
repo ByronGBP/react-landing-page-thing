@@ -5,9 +5,7 @@ import Contact from './Contact';
 
 const Footer = () => (
   <footer id="footer">
-    <div className="footer__contact">
-      <Contact />
-    </div>
+    <Contact />
   </footer>
 );
 

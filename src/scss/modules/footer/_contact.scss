@@ -1,9 +1,11 @@
 .contact {
-  &__container {
-    width: 100%;
-    height: 100%;
+  &__wrapper {
     @include flex;
     @include justify-content-end;
+  }
+
+  &__container {
+    position: absolute;
   }
 
   &__link {
@@ -11,10 +13,4 @@
     width: 78px;
     height: 90px;
   }
-}
-
-//TODO:- redo.
-#project-mb:active {
-  fill:$black-color;
-  @include transition(0.2s);
 }
