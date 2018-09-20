@@ -33,9 +33,9 @@ export const createObserver = (elements, classToAdd) => {
             }
             intersectionObserver.unobserve(currentTarget);
           }, hackForDelay);
-          hackForDelay += 0;
-          if (hackForDelay > 500) {
-            hackForDelay = 100;
+          hackForDelay += 300;
+          if (hackForDelay > 600) {
+            hackForDelay = 0;
           }
         }
       });

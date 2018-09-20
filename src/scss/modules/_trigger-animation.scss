@@ -29,6 +29,32 @@
       @include transform(translateY(200px));
     }
 
+    .translateY--250 {
+      @include transform(translateY(250px));
+    }
+
+    .translateY--300 {
+      @include transform(translateY(300px));
+    }
+    .translateY--350 {
+      @include transform(translateY(350px));
+    }
+
+    .translateY--400 {
+      @include transform(translateY(400px));
+    }
+
+    .translateY--500 {
+      @include transform(translateY(500px));
+    }
+    .translateY--600 {
+      @include transform(translateY(600px));
+    }
+
+    .translateY--700 {
+      @include transform(translateY(700px));
+    }
+
     &.is-ready {
       @include transform(translateY(0px));
       opacity: 1;
