@@ -11,4 +11,14 @@
       @include transform(translateY(0px));
     }
   }
+
+  &__translateX {
+
+    @include transform(translateX(-20px));
+
+    &.ready {
+      opacity: 1;
+      @include transform(translateX(0px));
+    }
+  }
 }

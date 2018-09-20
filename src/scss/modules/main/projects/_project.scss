@@ -1,3 +1,4 @@
+//TODO:- Refactor this files!
 .project {
   &__wrapper {
     width: 100%;
@@ -19,7 +20,7 @@
 
   &__content {
     @extend %absolute-center;
-    z-index: 1000;
+    z-index: 1500;
     overflow: hidden;
 
     &__text {
@@ -47,6 +48,20 @@
       background-size: cover;
       background-position: 50% 50%;
     }
+
+    &.is-hover {
+      .project__title {
+        @include transform(translateY(0px));
+        opacity: 1;
+      }
+      .project__content__image {
+        @include transform(scale(1.05,1.05));
+      }
+
+      .project__background {
+        opacity: 0.68;
+      }
+    }
   }
 
   &__subtitle {
@@ -54,15 +69,21 @@
     width: 60%;
     position: absolute;
     top: 0px;
-    @include transform(translateY(0px));
-    @include transition(0.6s 1s ease);
+    padding-left: 0px;
+    @include transition(0.6s ease);
   }
 
   &__title {
     opacity: 0;
     padding-top: 40px;
-    @include transform(translateY(30px));
+
+    &.is-active {
+      opacity: 1;
+      @include transform(none);
+    }
+
     @include transition(0.6s ease);
+    @include transform(translateY(20px));
 
     @include breakpoints(768px) {
       font-size: 30px;
@@ -78,8 +99,7 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    @include transition(0.6s 2s ease);
-    @include transform(translateX(0px));
+    @include transition(0.6s ease);
 
     &__text {
       text-transform: uppercase;
@@ -92,7 +112,25 @@
       height: 5px;
       display: inline-block;
     }
-
   }
 
+  &__background {
+    @extend %absolute-center;
+    z-index: 1100;
+    opacity: 0;
+
+    @include transition(0.6s ease);
+
+    &--is-first {
+      background-color: rgba(128, 130, 140, 1) 
+    }
+
+    &--is-second {
+      background-color: rgba(185, 152, 104, 1)
+    }
+
+    &--is-third {
+      background-color: rgba(222, 142, 124, 1)
+    }
+  }
 }
