@@ -7,7 +7,6 @@ type Props = {
 
 class Company extends Component<Props> {
   
-  
   render() {
     const { companyUrl } = this.props;
     return (

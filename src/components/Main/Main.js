@@ -3,9 +3,8 @@ import React, { Component, Fragment } from 'react';
 
 import Landing from './Landing';
 import Companies from './Companies';
-import Featured from './Featured/Featured';
+import Projects from './Projects';
 import MoreProjects from './MoreProjects/MoreProjects';
-import { timingSafeEqual } from 'crypto';
 
 type Props = {
   isLoaded: boolean;
@@ -21,23 +20,15 @@ class Main extends Component<Props> {
         <Fragment>
           <Landing/>
           <Companies />
-          <Featured />
+          <Projects />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
-          <Featured />
           <MoreProjects />
         </Fragment>    
 

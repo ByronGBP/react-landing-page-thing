@@ -17,7 +17,7 @@ export const createObserver = (elements, classToAdd) => {
     const newClass = classToAdd || 'ready';
     //Idea:- Everytime an entry isIntersecting will has a delay 
     //       that will increment each time theres a new one
-    let hackForDelay = 600; 
+    let hackForDelay = 400; 
     let intersectionObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry, idx) => {
         if (entry.isIntersecting) {
@@ -26,7 +26,10 @@ export const createObserver = (elements, classToAdd) => {
             currentTarget.classList.add(newClass);
             intersectionObserver.unobserve(currentTarget);
           }, hackForDelay);
-          hackForDelay += (200 + (idx/1));
+          hackForDelay += (100 + (idx/50) / 1500);
+          if (hackForDelay > 1500) {
+            hackForDelay = 600;
+          }
         }
       });
     });
@@ -37,7 +40,6 @@ export const createObserver = (elements, classToAdd) => {
   }
 };
 
-
 export const anotherOne = (elements, classToAdd) => {
   let lazyElements = elements;
   let active = false;
@@ -46,7 +48,6 @@ export const anotherOne = (elements, classToAdd) => {
   const lazyLoad = () => {
     if (active === false) {
       active = true;
-
       setTimeout(() => {
         lazyElements.forEach((lazyElement) => {
           if ((lazyElement.getBoundingClientRect().top <= window.innerHeight && lazyElement.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyElement).display !== "none") {
@@ -67,7 +68,6 @@ export const anotherOne = (elements, classToAdd) => {
             }
           }
         });
-
         active = false;
       }, 200);
     }

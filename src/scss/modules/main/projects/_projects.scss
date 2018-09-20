@@ -1,0 +1,26 @@
+.projects {
+  @extend .l-container;
+  
+  padding-left: 0px;
+  padding-right: 0px;
+
+  //TODO:- make breakpoints for max-widht instead
+  @include breakpoints(768px) {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  @include breakpoints(1200px) {
+    width: 1156px;
+  }
+
+  &__container {
+    @extend .l-row; 
+  }
+
+  &__table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
