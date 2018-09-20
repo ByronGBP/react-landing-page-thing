@@ -18,6 +18,33 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
+
+  @include transition(0.4s ease-out);
+  &.is-second-color {
+    //TODO:- This was a fast fix -> REDO!
+    color:$black-color!important;
+    background:$white-color!important;
+
+    #header{
+      background-color:$white-color!important;
+    }
+
+    svg #project-pc {
+      fill: $black-color!important;
+    }
+
+    svg #project-pc, svg #Triangle, svg #contact-mb, svg #project-mb  {
+      fill: $black-color!important;
+    }
+
+    svg #Path-2 {
+      stroke: $black-color!important;
+    }
+
+    .more__arrow {
+      @include transform(translateX(55px));
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,8 +94,7 @@ button {
   }
 }
 
-.link{
-
+.link {
   &--legal {
     font-size: 12px;
     line-height: 1.3;
@@ -91,7 +117,6 @@ button {
 }
 
 .font {
-  
   &__subtitle {
     font-family: "AvenirLTStd-Heavy";
     font-size: 10px;
@@ -125,6 +150,23 @@ button {
     letter-spacing: 0.09em;
     font-weight: 900;
     font-style: normal;
+  }
+
+  &__more {
+    font-family: "AmerigoBT-BoldA";
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: 0em;
+    font-weight: normal;
+    font-style: normal;
+
+    @include breakpoints(768px) {
+      font-size: 60px;
+    }
+
+    @include breakpoints(992px) {
+      font-size: 85px;
+    }
   }
 }
 

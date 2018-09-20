@@ -25,9 +25,7 @@ class Home extends Component<Props> {
       <Fragment>
         <div className="main-container">
           <Header />
-          <div>
-            <Main isLoaded={ isLoaded }/>
-          </div>
+          <Main isLoaded={ isLoaded }/>
           <Footer />
         </div>
         <a className="link--legal"> Legal Notice</a>

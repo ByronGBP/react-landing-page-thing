@@ -31,11 +31,11 @@
 }
 
 @include keyframes(loader-animation) {
-    0%{
-      @include transform(scale(0));
-    }
-    100%{
-      @include transform(scale(1));
-      opacity:0
-    }
+  0%{
+    @include transform(scale(0));
+  }
+  100%{
+    @include transform(scale(1));
+    opacity:0
+  }
 }

@@ -9,8 +9,6 @@ type Props = {};
 
 class Content extends Component<Props> {
 
-  messageElement: ?HTMLDivElement;
-
   componentDidMount() {
     setTimeout(() => {
       triggerAnimation();
@@ -22,7 +20,7 @@ class Content extends Component<Props> {
       <div className="content">
         <div className="content__body__wrapper">
           <div className="content__container">
-            <div className="content__item trigger-animation trigger-animation__translateY" ref={elem => this.messageElement = elem}>
+            <div className="content__item trigger-animation trigger-animation__translateY">
               <h1 className="font__subtitle"><p>DIGITAL YOU</p></h1>
               <h3 className="font__title col-sm-8"><p>Digital experiences with results</p></h3>
             </div>

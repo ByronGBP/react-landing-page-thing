@@ -1,0 +1,50 @@
+.more {
+  height: 100vh;
+  position: relative;
+
+  @media (orientation: landscape) {
+    height: 100vh !important;
+    min-height: 500px;
+    padding-bottom: 0px;
+  }
+
+  &__wrapper {
+    @extend %absolute-center;
+    overflow: hidden;
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+
+    @include flex;
+    @include align-items-center;
+    @include justify-content-center;
+  }
+
+  &__item {
+    display: inline-block;
+    text-align: center;
+    max-width: 80%;
+  }
+
+  &__text{
+    position: relative;
+    display: inline-block;
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 0px;
+    bottom: -20px;
+    width: 56px;
+    height: 6px;
+    @include transition(0.4s);
+
+    svg {
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+  }
+}

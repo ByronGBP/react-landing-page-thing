@@ -8,6 +8,15 @@
     position: absolute;
   }
 
+  &__item {
+    position: absolute;
+    opacity: 0;
+    @include transition(0.4s ease-out);
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
   &__link {
     display: block;
     width: 78px;

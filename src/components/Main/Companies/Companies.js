@@ -19,21 +19,18 @@ const companies = [
   'https://you.digital/system/clients/images/clients_60_original.svg?1522146294',
 ];
 
-class Companies extends Component<Props> {
-  render() {
-    return (
-      <section className="companies">
-        <Title title="We work with"/>
-        <div className="companies__container">
-          <div className="company__container">
-            { companies.map((company: string, idx: number) => {
-              return <Company key={idx} companyUrl={company}/>;
-            })}
-          </div>
-        </div>
-      </section>
-    );
-  }
-}
+const Companies = () =>  (
+  <section className="companies">
+    <Title title="We work with"/>
+    <div className="companies__container">
+      <div className="company__container">
+        { companies.map((company: string, idx: number) => {
+          return <Company key={idx} companyUrl={company}/>;
+        })}
+      </div>
+    </div>
+  </section>
+);
+
 
 export default Companies;

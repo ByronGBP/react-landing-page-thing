@@ -10,10 +10,20 @@
 
 @mixin justify-content-end {
   justify-content: flex-end;
+   -webkit-justify-content: flex-end;
+   -moz-justify-content: flex-end;
 }
 
 @mixin justify-content-between {
   justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+}
+
+@mixin justify-content-center {
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
 }
 
 @mixin flex-column {

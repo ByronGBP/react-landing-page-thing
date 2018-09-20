@@ -7,7 +7,7 @@
   padding-right: 13px;
 }
 
-.project__background, .project__content__image, .project__content__text, .project__content {
+.more__wrapper, .project__background, .project__content__image, .project__content__text, .project__content {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -29,6 +29,32 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-transition: 0.4s ease-out;
+  -moz-transition: 0.4s ease-out;
+  -o-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+body.is-second-color {
+  color: #263265 !important;
+  background: white !important;
+}
+body.is-second-color #header {
+  background-color: white !important;
+}
+body.is-second-color svg #project-pc {
+  fill: #263265 !important;
+}
+body.is-second-color svg #project-pc, body.is-second-color svg #Triangle, body.is-second-color svg #contact-mb, body.is-second-color svg #project-mb {
+  fill: #263265 !important;
+}
+body.is-second-color svg #Path-2 {
+  stroke: #263265 !important;
+}
+body.is-second-color .more__arrow {
+  -webkit-transform: translateX(55px);
+  -moz-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -132,6 +158,24 @@ button {
   font-weight: 900;
   font-style: normal;
 }
+.font__more {
+  font-family: "AmerigoBT-BoldA";
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: 0em;
+  font-weight: normal;
+  font-style: normal;
+}
+@media only screen and (min-width: 768px) {
+  .font__more {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .font__more {
+    font-size: 85px;
+  }
+}
 
 .image__logo {
   display: block;
@@ -167,6 +211,7 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   background: #263265;
+  overflow-x: hidden;
 }
 
 ul, ol, li {
@@ -534,11 +579,11 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   transform: translateY(20px);
 }
 .trigger-animation__translateY.ready {
-  opacity: 1;
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
+  opacity: 1;
 }
 .trigger-animation__translateX {
   -webkit-transform: translateX(-20px);
@@ -547,11 +592,11 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   transform: translateX(-20px);
 }
 .trigger-animation__translateX.ready {
-  opacity: 1;
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
+  opacity: 1;
 }
 
 .burger {
@@ -706,6 +751,8 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
   height: 100%;
 }
 .header__nav {
@@ -758,9 +805,22 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   display: flex;
   display: -webkit-flex;
   justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
 }
 .contact__container {
   position: absolute;
+}
+.contact__item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: 0.4s ease-out;
+  -moz-transition: 0.4s ease-out;
+  -o-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+.contact__item.is-active {
+  opacity: 1;
 }
 .contact__link {
   display: block;
@@ -815,10 +875,10 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
 
 .content {
   height: inherit;
-  -webkit-transition: 0.6s 2s ease-out;
-  -moz-transition: 0.6s 2s ease-out;
-  -o-transition: 0.6s 2s ease-out;
-  transition: 0.6s 2s ease-out;
+  -webkit-transition: 0.6s ease-out;
+  -moz-transition: 0.6s ease-out;
+  -o-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
 }
 .content__body__wrapper {
   position: absolute;
@@ -1027,8 +1087,6 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
 @media only screen and (min-width: 768px) {
   .project__wrapper {
     width: 50%;
-    display: inline-block;
-    float: left;
   }
 }
 .project__container {
@@ -1171,6 +1229,7 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   .projects {
     padding-left: 13px;
     padding-right: 13px;
+    padding-bottom: 40px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -1182,6 +1241,62 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.more {
+  height: 100vh;
+  position: relative;
+}
+@media (orientation: landscape) {
+  .more {
+    height: 100vh !important;
+    min-height: 500px;
+    padding-bottom: 0px;
+  }
+}
+.more__wrapper {
+  overflow: hidden;
+}
+.more__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+}
+.more__item {
+  display: inline-block;
+  text-align: center;
+  max-width: 80%;
+}
+.more__text {
+  position: relative;
+  display: inline-block;
+}
+.more__arrow {
+  position: absolute;
+  right: 0px;
+  bottom: -20px;
+  width: 56px;
+  height: 6px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.more__arrow svg {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .is-overflow-hidden {

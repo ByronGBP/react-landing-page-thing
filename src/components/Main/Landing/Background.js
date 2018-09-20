@@ -5,7 +5,7 @@ import { lazyLoad } from '../../../utils/lazyload';
 
 type Props = {};
 
-class Landing extends Component<Props> {
+class Background extends Component<Props> {
 
   backgroundImageElement: ?HTMLElement;
   currentYOffset: number = 0;
@@ -75,4 +75,4 @@ class Landing extends Component<Props> {
   }
 }
 
-export default Landing;
+export default Background;

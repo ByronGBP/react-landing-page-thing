@@ -30,9 +30,9 @@ class Burger extends Component<Props> {
 
   render() {
     return (
-      <div className="burger">
+      <div className="burger" onClick={this.handleClick}>
         <div className="burger__container">
-          <div className="burger__wrapper" onClick={this.handleClick}>
+          <div className="burger__wrapper">
             <div className="burger__line burger__line--is-top"></div>
             <div className="burger__line burger__line--is-middle"></div>
             <div className="burger__line burger__line--is-bottom"></div>

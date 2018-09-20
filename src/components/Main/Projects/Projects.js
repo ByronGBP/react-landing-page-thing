@@ -4,9 +4,6 @@ import React, { Component } from 'react';
 import Title from '../../Title';
 import Project from './Project';
 
-type Props = {
-};
-
 //TODO:- Refactor
 const companies = [
   {
@@ -41,25 +38,21 @@ const companies = [
     isContact: true },
 ];
 
-class Projects extends Component<Props> {
-  render() {
-    return (
-      <section className="featured">
-        <Title title="Featured"/>
-        <div className="projects">
-          <div className="projects__container">
-            <div className="col-sm-12">
-              <div className="projects__table">
-                {companies.map((elem, idx) => {
-                  return <Project key={idx} project={elem} />;
-                })}
-              </div>
-            </div>
-          </div>
+const Projects = () => (
+  <section className="featured">
+    <Title title="Featured"/>
+    <div className="projects">
+      <div className="projects__container">
+        <div className="col-sm-12">
+          <ul className="projects__table">
+            {companies.map((elem, idx) => {
+              return <Project key={idx} project={elem} />;
+            })}
+          </ul>
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </div>
+  </section>
+);
 
 export default Projects;
