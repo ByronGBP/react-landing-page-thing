@@ -17,7 +17,7 @@ export const createObserver = (elements, classToAdd) => {
     const newClass = classToAdd || 'ready';
     //Idea:- Everytime an entry isIntersecting will has a delay 
     //       that will increment each time theres a new one
-    let hackForDelay = 10; 
+    let hackForDelay = 600; 
     let intersectionObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry, idx) => {
         if (entry.isIntersecting) {
@@ -26,7 +26,7 @@ export const createObserver = (elements, classToAdd) => {
             currentTarget.classList.add(newClass);
             intersectionObserver.unobserve(currentTarget);
           }, hackForDelay);
-          hackForDelay += (50 + (idx/1));
+          hackForDelay += (200 + (idx/1));
         }
       });
     });
