@@ -20,27 +20,12 @@
   }
 
   &__container {
-
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-right: auto;
-    margin-left: auto;
-
-    @include breakpoints(768px) {
-      width:746px;
-      padding-left:13px;
-      padding-right:13px;
-    }
-
-    @include breakpoints(992px) {
-      width: 966px;
-    }
+    @extend .l-container;
   }
 
   &__item {
     opacity: 0;
-    margin-left: -13px;
-    margin-right: -13px;
+    @extend .l-row;
     @include transition(0.4s 1s ease-out);
     @include transform(translateY(10%));
 

@@ -1,3 +1,5 @@
+@import "modules/_loader.scss";
+@import "modules/_title.scss";
 @import "modules/header/_burger.scss";
 @import "modules/header/_logo.scss";
 @import "modules/header/_sidebar.scss";
@@ -9,5 +11,5 @@
 @import "modules/main/landing/_content.scss";
 @import "modules/main/landing/_landing.scss";
 @import "modules/main/landing/_mouse-scroll-animation.scss";
-@import "modules/_loader.scss";
-@import "modules/_overlay.scss";
+@import "modules/main/companies/_company.scss";
+@import "modules/main/companies/_companies.scss";

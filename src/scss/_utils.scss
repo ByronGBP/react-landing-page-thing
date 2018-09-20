@@ -23,6 +23,13 @@
   flex-direction: column;
 }
 
+@mixin flex-wrap {
+  -webkit-flex-wrap: wrap; 
+  -moz-flex-wrap: wrap; 
+  flex-wrap: wrap;
+
+}
+
 @mixin user-select($value) {
   -webkit-user-select: $value;
   -moz-user-select: $value;
@@ -85,7 +92,7 @@
   }
 }
 
-@mixin col-extend($prefix) {
+@mixin col-extend-common($prefix) {
     @for $i from 1 through 12 {
     .col-#{$prefix}-#{$i} { @extend %common };
   }

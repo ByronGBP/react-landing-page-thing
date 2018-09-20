@@ -1,0 +1,16 @@
+.title {
+  @extend .l-container;
+
+  @include breakpoints(1200px){
+    width: 796px;
+  }
+
+  &__container {
+    @extend .l-row;
+    padding-bottom: 40px;
+
+    @include breakpoints(768px) {
+      padding-bottom: 80px;
+    }
+  }
+}

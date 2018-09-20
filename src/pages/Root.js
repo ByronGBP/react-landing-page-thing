@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 
 import Home from './Home';
-import Loader from './Loader';
+import Loader from '../components/Loader';
 
 type Props = {
 };

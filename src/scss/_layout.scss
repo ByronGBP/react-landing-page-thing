@@ -1,10 +1,14 @@
-@include col-list(s);
+@include col-list(xs);
 @include breakpoints(768px) {
-  @include col-list(m);
+  @include col-list(sm);
+}
+@include breakpoints(992px) {
+  @include col-list(md);
 }
 
-@include col-extend(s);
-@include col-extend(m);
+@include col-extend-common(xs);
+@include col-extend-common(sm);
+@include col-extend-common(md);
 
 #header {
   height: 60px;
@@ -31,6 +35,28 @@
   width: 100%;
   z-index: 100;
   @include transition(0.4s ease-out);
+}
+
+.l-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoints(768px) {
+    width:746px;
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  @include breakpoints(992px) {
+    width: 966px;
+  }
+}
+
+.l-row {
+  margin-left: -13px;
+  margin-right: -13px;
 }
 
 .ratio-1-1 {

@@ -1,0 +1,15 @@
+.companies{
+
+  &__container {
+    @extend .l-container;
+    padding-bottom: 150px;
+
+    @include breakpoints(768px) {
+      padding-bottom: 130px;
+    }
+
+    @include breakpoints(1200px) {
+       width: 1001px;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 
 import Landing from './Landing';
-import WorkWith from './WorkWith/WorkWith';
+import Companies from './Companies';
 import Featured from './Featured/Featured';
 import MoreProjects from './MoreProjects/MoreProjects';
 import { timingSafeEqual } from 'crypto';
@@ -20,31 +20,23 @@ class Main extends Component<Props> {
         { isLoaded &&     
         <Fragment>
           <Landing/>
-          <WorkWith />
+          <Companies />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
-          <WorkWith />
           <Featured />
           <MoreProjects />
         </Fragment>    
