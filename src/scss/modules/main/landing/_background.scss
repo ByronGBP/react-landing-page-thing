@@ -13,9 +13,14 @@
     background-position: 50% 50%;
     opacity: 0.5;
     @include transition(0.4s ease-out);
+    background-image: url('https://you.digital/system/home_images/images/home_images_62_original.jpg?1522146353');
 
     &.is-active {
       opacity: 1;
+    }
+
+    &.is-hidden {
+      opacity: 0;
     }
   }
 

@@ -16,20 +16,20 @@ const images = [
 
 class Background extends Component<Props> {
 
-  backgroundImageElement: ?HTMLElement;
+  carouselElement: ?HTMLElement;
   currentYOffset: number = 0;
   currentYPosition: number = 0;
   
   intervalId: IntervalID;
-  backgroundImageElements: ?NodeList<HTMLElement>;
-  currentImageIndex: number = 0;
+  baackgroundImageElements: ?NodeList<HTMLElement>;
+  currentImageIndex: number = 1;
 
   handleScroll = () => {
-    if (!this.backgroundImageElement) {
+    if (!this.carouselElement) {
       return;
     }
     //TODO:- isolate the parallax logic
-    const element = this.backgroundImageElement;
+    const element = this.carouselElement;
     const pageYOffset = window.pageYOffset;
     if (pageYOffset > this.currentYOffset && this.currentYPosition > -15) {
       this.currentYPosition -= 0.25;
@@ -44,22 +44,22 @@ class Background extends Component<Props> {
   carouselAction = () => {
     //Little sht pretending to be a carousel
     //Removing and adding `is-active` with a gap of time, does a fake effect of fade-out
-    if (!this.backgroundImageElement){
+    if (!this.carouselElement){
       return;
     }
-    const backgroundImageElement = this.backgroundImageElement;
-    if (!this.backgroundImageElements) {
+    const carouselElement = this.carouselElement;
+    if (!this.baackgroundImageElements) {
       return;
     }
-    const backgroundImageElements = this.backgroundImageElements;
-    backgroundImageElement.classList.remove('is-active');
-    backgroundImageElement.style.backgroundImage = backgroundImageElements[this.currentImageIndex].dataset.src;
+    const baackgroundImageElements = this.baackgroundImageElements;
+    carouselElement.classList.remove('is-active');
+    carouselElement.style.backgroundImage = baackgroundImageElements[this.currentImageIndex].dataset.src;
     this.currentImageIndex++;
-    if (this.currentImageIndex > backgroundImageElements.length - 1) {
+    if (this.currentImageIndex > baackgroundImageElements.length - 1) {
       this.currentImageIndex = 0;
     }
     setTimeout(() => {
-      backgroundImageElement.classList.add('is-active');
+      carouselElement.classList.add('is-active');
     }, 400);
   }
 
@@ -79,18 +79,26 @@ class Background extends Component<Props> {
 
   setupCarousel() {
     //TODO:- stop doing sht!
-    this.backgroundImageElements = document.querySelectorAll('.background__image');
+    this.baackgroundImageElements = document.querySelectorAll('.background__image');
+    this.firstAnimation();
+  }
+
+  firstAnimation() {
+    //Idea:- Faking an smooth animation at the beggining;
     setTimeout(() => {
-      // for not wait 5s first time;
-      this.carouselAction(); 
+      this.carouselElement.classList.remove('is-hidden');
+    }, 3000);
+
+    setTimeout(() => {
+      this.carouselElement.classList.add('is-active');
       this.intervalId = setInterval(this.carouselAction, 5000);
-    }, 2000);
+    }, 3500);
   }
 
   render() {
     return (
       <div className="background">
-        <div className="background__carousel" ref={elem => this.backgroundImageElement = elem}>
+        <div className="background__carousel is-hidden" ref={elem => this.carouselElement = elem}>
           {images.map((elem, idx) => {
             return <div className="background__image lazy-bg" key={idx} data-src={`url(${elem})`}></div>;
           })}

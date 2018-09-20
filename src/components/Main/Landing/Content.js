@@ -20,7 +20,7 @@ class Content extends Component<Props> {
       <div className="content">
         <div className="content__body__wrapper">
           <div className="content__container">
-            <div className="content__item trigger-animation trigger-animation__translateY">
+            <div className="content__item trigger-animation trigger-animation--delay-3 trigger-animation__translateY translateY-50">
               <h1 className="font__subtitle"><p>DIGITAL YOU</p></h1>
               <h3 className="font__title col-sm-8"><p>Digital experiences with results</p></h3>
             </div>

@@ -18,7 +18,7 @@ const Company = ({ project: { url, subtitle, title, isContact, key } }: Props) =
     <div className="project__container trigger-animation trigger-animation__translateY">
       <a className="project__content" onMouseEnter={handleHoverEnter} onMouseLeave={handleHoverExit}>
         <div className="project__content__text">
-          <div className="project__subtitle font__subtitle trigger-animation trigger-animation__translateY">{subtitle}</div>
+          <div className="project__subtitle font__subtitle trigger-animation trigger-animation__translateY translateY-100">{subtitle}</div>
           {title &&
                 <div className={`project__title font__title ${isContact ? 'is-active': ''}`}>{title}</div>
           }
