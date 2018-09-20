@@ -36,7 +36,7 @@ class Background extends Component<Props> {
     if (!this.backgroundImageElement) {
       return;
     }
-    this.backgroundImageElement.classList.toggle('ready-2');
+    this.backgroundImageElement.classList.toggle('is-ready-2');
   }
 
   componentDidMount() {

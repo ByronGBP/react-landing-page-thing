@@ -5,7 +5,7 @@
   &__translateY {
     @include transform(translateY(20px));
 
-    &.ready {
+    &.is-ready {
       @include transform(translateY(0px));
       opacity: 1;
     }
@@ -14,7 +14,7 @@
   &__translateX {
     @include transform(translateX(-20px));
 
-    &.ready {
+    &.is-ready {
       @include transform(translateX(0px));
       opacity: 1;
     }

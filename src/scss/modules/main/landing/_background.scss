@@ -21,12 +21,12 @@
       background-position-y: 0px
     }
 
-    &.ready {
+    &.is-ready {
       background-image: url(../../public/assets/images/header/home_images_01.jpg)!important;
       background-size: cover;
     }
 
-    &.ready-2 {
+    &.is-ready-2 {
       background-position-x: 60%;
       background-image: url(../../public/assets/images/header/home_images_02.jpg)!important;
       background-size: cover;

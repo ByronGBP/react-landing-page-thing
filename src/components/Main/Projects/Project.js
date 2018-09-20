@@ -25,14 +25,14 @@ const Company = ({ project: { url, subtitle, title, isContact, key } }: Props) =
           {title && !isContact &&
                 <div className="project__arrow trigger-animation trigger-animation__translateX">
                   <div className="project__arrow__text font__arrow">View Project</div>
-                  <img src="./src/public/assets/images/common/arrow_right.svg" alt="arrow" className="project__arrow__image"/>
+                  <img data-src="./src/public/assets/images/common/arrow_right.svg" alt="arrow" className="project__arrow__image lazy-bg"/>
                 </div>
           }
         </div>
         {key &&
           <div className={`project__background project__background--is-${key}`}></div>
         }
-        <div className="project__content__image" style={{ backgroundImage: `url(${url})`}}></div>
+        <div className="project__content__image lazy-bg" data-src={`url(${url})`}></div>
       </a>
     </div>
   </li>

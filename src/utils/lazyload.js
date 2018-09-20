@@ -14,7 +14,7 @@ export const createObserver = (elements, classToAdd) => {
   //TODO:- add pollyfill for unsupported browsers -> https://github.com/w3c/IntersectionObserver/tree/master/polyfill
   //        or use the `anotherOne` function
   if ("IntersectionObserver" in window) {
-    const newClass = classToAdd || 'ready';
+    const newClass = classToAdd || 'is-ready';
     //Idea:- Everytime an entry isIntersecting will has a delay 
     //       that will increment each time theres a new one
     let hackForDelay = 400; 
@@ -24,6 +24,13 @@ export const createObserver = (elements, classToAdd) => {
           setTimeout(() => {
             let currentTarget = entry.target;
             currentTarget.classList.add(newClass);
+            if(currentTarget.dataset.src) {
+              if (currentTarget.tagName === "IMG") {
+                currentTarget.src = currentTarget.dataset.src;
+              } else {
+                currentTarget.style.backgroundImage = currentTarget.dataset.src;
+              }
+            }
             intersectionObserver.unobserve(currentTarget);
           }, hackForDelay);
           hackForDelay += (100 + (idx/50) / 1500);
@@ -43,7 +50,7 @@ export const createObserver = (elements, classToAdd) => {
 export const anotherOne = (elements, classToAdd) => {
   let lazyElements = elements;
   let active = false;
-  let newClass = classToAdd || 'ready';
+  let newClass = classToAdd || 'is-ready';
 
   const lazyLoad = () => {
     if (active === false) {
