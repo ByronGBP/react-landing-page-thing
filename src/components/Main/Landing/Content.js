@@ -3,6 +3,8 @@ import React, { Component, Fragment } from 'react';
 
 import Background from './Background';
 
+import { triggerAnimation } from '../../../utils/lazyload';
+
 type Props = {};
 
 class Content extends Component<Props> {
@@ -10,12 +12,8 @@ class Content extends Component<Props> {
   messageElement: ?HTMLDivElement;
 
   componentDidMount() {
-    //Little hack: For some reason transition doesn't work if there is not a minimun delay
-    //TODO:- find out why!
     setTimeout(() => {
-      if (this.messageElement) {
-        this.messageElement.classList.add('is-active');
-      }
+      triggerAnimation();
     }, 20);
   }
 
@@ -24,7 +22,7 @@ class Content extends Component<Props> {
       <div className="content">
         <div className="content__body__wrapper">
           <div className="content__container">
-            <div className="content__item" ref={elem => this.messageElement = elem}>
+            <div className="content__item trigger-animation trigger-animation__translateY" ref={elem => this.messageElement = elem}>
               <h1 className="font__subtitle"><p>DIGITAL YOU</p></h1>
               <h3 className="font__title col-sm-8"><p>Digital experiences with results</p></h3>
             </div>

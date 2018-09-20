@@ -24,15 +24,6 @@
   }
 
   &__item {
-    opacity: 0;
     @extend .l-row;
-    @include transition(0.4s 1s ease-out);
-    @include transform(translateY(10%));
-
-
-    &.is-active {
-      opacity: 1!important;
-      @include transform(translateY(0%));
-    }
   }
 }

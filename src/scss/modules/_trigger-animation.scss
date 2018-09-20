@@ -1,0 +1,14 @@
+.trigger-animation {
+  opacity: 0;
+  @include transition(0.4s ease-out);
+
+  &__translateY {
+
+    @include transform(translateY(20px));
+
+    &.ready {
+      opacity: 1;
+      @include transform(translateY(0px));
+    }
+  }
+}
