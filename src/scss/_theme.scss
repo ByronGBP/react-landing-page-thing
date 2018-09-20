@@ -183,10 +183,6 @@ button {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: contain;
-    
-    &.is-ready {
-      background-image: attr(data-src);
-    }
   }
 
   @include breakpoints(768px) {

@@ -190,9 +190,6 @@ button {
   background-position: 50% 50%;
   background-size: contain;
 }
-.image__logo.is-ready {
-  background-image: attr(data-src);
-}
 @media only screen and (min-width: 768px) {
   .image {
     max-width: 196px;
@@ -835,35 +832,23 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
   height: inherit;
   z-index: -10;
 }
-.background__image {
+.background__carousel {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   width: 100%;
   height: 100%;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-.background__image.is-active {
-  opacity: 1 !important;
-}
-.background__image.lazy-bg {
-  opacity: 0;
-  background-image: none;
-  background-position-x: 20%;
-  background-position-y: 0px;
-}
-.background__image.is-ready {
-  background-image: url(../../public/assets/images/header/home_images_01.jpg) !important;
   background-size: cover;
+  background-position: 50% 50%;
+  opacity: 0.5;
+  -webkit-transition: 0.4s ease-out;
+  -moz-transition: 0.4s ease-out;
+  -o-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
 }
-.background__image.is-ready-2 {
-  background-position-x: 60%;
-  background-image: url(../../public/assets/images/header/home_images_02.jpg) !important;
-  background-size: cover;
+.background__carousel.is-active {
+  opacity: 1;
 }
 .background__gradient {
   position: absolute;
@@ -897,6 +882,10 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
 .content__footer__wrapper .content__item {
   opacity: 1;
 }
+.content__item {
+  margin: 0;
+}
+
 .landing {
   height: inherit;
   -webkit-transition: 0.6s;
