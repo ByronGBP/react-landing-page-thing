@@ -567,10 +567,10 @@ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, a {
 
 .trigger-animation {
   opacity: 0;
-  -webkit-transition: 0.4s ease-out;
-  -moz-transition: 0.4s ease-out;
-  -o-transition: 0.4s ease-out;
-  transition: 0.4s ease-out;
+  -webkit-transition: 0.4s 1s ease-out;
+  -moz-transition: 0.4s 1s ease-out;
+  -o-transition: 0.4s 1s ease-out;
+  transition: 0.4s 1s ease-out;
 }
 .trigger-animation__translateY {
   -webkit-transform: translateY(20px);
