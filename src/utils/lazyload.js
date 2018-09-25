@@ -1,3 +1,31 @@
+
+// Class to encapsulate all logic to observe an element
+export class DOMObservable {
+  constructor(dom, callback) {
+    if (!dom) {
+      throw new Error('No element provided');
+    }
+    if (!callback) {
+      throw new Error('No subscribe method provided');
+    }
+    this._dom = dom;
+    this._callback = callback;
+    this._initObserver();
+  }
+
+  _initObserver() {
+    this._intersectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          this._callback();
+          this._intersectionObserver.unobserve(this._dom);
+        }
+      });
+    });
+    this._intersectionObserver.observe(this._dom);
+  }
+}
+
 export const lazyLoad = (query) => {
   const matchQuery = query || '.lazy-bg';
   var lazyImages = [].slice.call(document.querySelectorAll(matchQuery));
@@ -13,6 +41,7 @@ export const triggerAnimation = (query) => {
 export const createObserver = (elements, classToAdd) => {
   //TODO:- add pollyfill for unsupported browsers -> https://github.com/w3c/IntersectionObserver/tree/master/polyfill
   //        or use the `anotherOne` function
+  console.log(elements);
   if ("IntersectionObserver" in window) {
     const newClass = classToAdd || 'is-ready';
     //Idea:- Everytime an entry isIntersecting will has a delay 
